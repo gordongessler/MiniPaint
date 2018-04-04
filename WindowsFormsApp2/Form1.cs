@@ -83,9 +83,10 @@ namespace WindowsFormsApp2
             
             p.Color = ctrl.BackColor;
         }
+
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            canDraw = toolStripButton1.Checked;
+            canDraw = toolStripBrushButton.Checked;
         }
         
     }

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace WindowsFormsApp2
     {
         bool drawing = false, canDraw = false;
         Graphics gp;
-        Pen p = new Pen(Brushes.Black, 1);
+        Pen p = new Pen(Brushes.Black, 2);
         int X = 0;
         int Y = 0;
         public Form1()
@@ -33,6 +34,7 @@ namespace WindowsFormsApp2
                 flowLayoutPanel1.Controls.Add(p);
             }
 
+            toolStripComboBox1.SelectedIndex = 1;
             gp = pictureBox1.CreateGraphics();
         }
 
@@ -79,15 +81,20 @@ namespace WindowsFormsApp2
         }
         private void pictureBox_Click(object sender, EventArgs e)
         {
-            Control ctrl = ((Control)sender);
-            
-            p.Color = ctrl.BackColor;
+            PictureBox pic = (PictureBox)((Control)sender);
+            p.Color = pic.BackColor;
         }
 
         private void toolStripClearButton_Click(object sender, EventArgs e)
         {
             pictureBox1.Invalidate();
             pictureBox1.BackColor = Color.White;
+        }
+
+        private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            p.Width = Int32.Parse(toolStripComboBox1.Items[toolStripComboBox1.SelectedIndex].ToString());
+            Debug.WriteLine(toolStripComboBox1.Items[toolStripComboBox1.SelectedIndex].ToString());
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)

@@ -241,6 +241,7 @@
             // toolStripComboBox1
             // 
             this.toolStripComboBox1.AutoSize = false;
+            this.toolStripComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.toolStripComboBox1.DropDownWidth = 90;
             this.toolStripComboBox1.Items.AddRange(new object[] {
             "1",
@@ -248,6 +249,7 @@
             "3"});
             this.toolStripComboBox1.Name = "toolStripComboBox1";
             this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
+            this.toolStripComboBox1.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox1_SelectedIndexChanged);
             // 
             // toolStripSeparator3
             // 

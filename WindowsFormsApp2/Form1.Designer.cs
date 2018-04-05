@@ -34,24 +34,24 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSaveButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLoadButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripBrushButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripRectangleButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripEllipseButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripClearButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSaveButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLoadButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripRectangleButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripEllipseButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripClearButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripEnglishButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripPolishButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -149,67 +149,11 @@
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(35, 22);
-            this.toolStripLabel1.Text = "Tools";
-            // 
-            // toolStripBrushButton
-            // 
-            this.toolStripBrushButton.CheckOnClick = true;
-            this.toolStripBrushButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripBrushButton.Image = global::WindowsFormsApp2.Resource1.brush;
-            this.toolStripBrushButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripBrushButton.Name = "toolStripBrushButton";
-            this.toolStripBrushButton.Size = new System.Drawing.Size(23, 22);
-            this.toolStripBrushButton.Text = "toolStripButton1";
-            this.toolStripBrushButton.ToolTipText = "Brush";
-            this.toolStripBrushButton.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
             this.toolStripLabel2.Size = new System.Drawing.Size(25, 22);
             this.toolStripLabel2.Text = "File";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripLabel3
-            // 
-            this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(59, 22);
-            this.toolStripLabel3.Text = "Thickness";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripLabel4
-            // 
-            this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(77, 22);
-            this.toolStripLabel4.Text = "Chosen color";
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripLabel5
-            // 
-            this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(59, 22);
-            this.toolStripLabel5.Text = "Language";
             // 
             // toolStripSaveButton
             // 
@@ -229,6 +173,29 @@
             this.toolStripLoadButton.Name = "toolStripLoadButton";
             this.toolStripLoadButton.Size = new System.Drawing.Size(23, 22);
             this.toolStripLoadButton.Text = "Load";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(35, 22);
+            this.toolStripLabel1.Text = "Tools";
+            // 
+            // toolStripBrushButton
+            // 
+            this.toolStripBrushButton.CheckOnClick = true;
+            this.toolStripBrushButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripBrushButton.Image = global::WindowsFormsApp2.Resource1.brush;
+            this.toolStripBrushButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripBrushButton.Name = "toolStripBrushButton";
+            this.toolStripBrushButton.Size = new System.Drawing.Size(23, 22);
+            this.toolStripBrushButton.Text = "toolStripButton1";
+            this.toolStripBrushButton.ToolTipText = "Brush";
+            this.toolStripBrushButton.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripRectangleButton
             // 
@@ -258,6 +225,51 @@
             this.toolStripClearButton.Size = new System.Drawing.Size(23, 22);
             this.toolStripClearButton.Text = "toolStripButton1";
             this.toolStripClearButton.ToolTipText = "Clear";
+            this.toolStripClearButton.Click += new System.EventHandler(this.toolStripClearButton_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(59, 22);
+            this.toolStripLabel3.Text = "Thickness";
+            // 
+            // toolStripComboBox1
+            // 
+            this.toolStripComboBox1.AutoSize = false;
+            this.toolStripComboBox1.DropDownWidth = 90;
+            this.toolStripComboBox1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.toolStripComboBox1.Name = "toolStripComboBox1";
+            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel4
+            // 
+            this.toolStripLabel4.Name = "toolStripLabel4";
+            this.toolStripLabel4.Size = new System.Drawing.Size(77, 22);
+            this.toolStripLabel4.Text = "Chosen color";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel5
+            // 
+            this.toolStripLabel5.Name = "toolStripLabel5";
+            this.toolStripLabel5.Size = new System.Drawing.Size(59, 22);
+            this.toolStripLabel5.Text = "Language";
             // 
             // toolStripEnglishButton
             // 
@@ -278,17 +290,6 @@
             this.toolStripPolishButton.Size = new System.Drawing.Size(23, 22);
             this.toolStripPolishButton.Text = "toolStripButton1";
             this.toolStripPolishButton.ToolTipText = "Polish";
-            // 
-            // toolStripComboBox1
-            // 
-            this.toolStripComboBox1.AutoSize = false;
-            this.toolStripComboBox1.DropDownWidth = 90;
-            this.toolStripComboBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 25);
             // 
             // Form1
             // 

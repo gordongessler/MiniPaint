@@ -84,6 +84,12 @@ namespace WindowsFormsApp2
             p.Color = ctrl.BackColor;
         }
 
+        private void toolStripClearButton_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Invalidate();
+            pictureBox1.BackColor = Color.White;
+        }
+
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             canDraw = toolStripBrushButton.Checked;

@@ -50,11 +50,11 @@
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripColorButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripEnglishButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripPolishButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripColorButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -172,7 +172,7 @@
             this.toolStripPolishButton});
             this.toolStrip1.Location = new System.Drawing.Point(3, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(643, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(612, 25);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -295,6 +295,16 @@
             this.toolStripLabel4.Size = new System.Drawing.Size(77, 22);
             this.toolStripLabel4.Text = "Chosen color";
             // 
+            // toolStripColorButton
+            // 
+            this.toolStripColorButton.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripColorButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripColorButton.ForeColor = System.Drawing.Color.Black;
+            this.toolStripColorButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripColorButton.Name = "toolStripColorButton";
+            this.toolStripColorButton.Size = new System.Drawing.Size(23, 22);
+            this.toolStripColorButton.Text = "Current color";
+            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
@@ -326,16 +336,6 @@
             this.toolStripPolishButton.Text = "toolStripButton1";
             this.toolStripPolishButton.ToolTipText = "Polish";
             // 
-            // toolStripColorButton
-            // 
-            this.toolStripColorButton.BackColor = System.Drawing.SystemColors.Control;
-            this.toolStripColorButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripColorButton.ForeColor = System.Drawing.Color.Black;
-            this.toolStripColorButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripColorButton.Name = "toolStripColorButton";
-            this.toolStripColorButton.Size = new System.Drawing.Size(23, 22);
-            this.toolStripColorButton.Text = "Current color";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,7 +347,6 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.ContentPanel.PerformLayout();

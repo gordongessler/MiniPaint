@@ -5,6 +5,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -183,8 +184,7 @@ namespace WindowsFormsApp2
                 pictureBox1.Image = DrawArea;
                 pictureBox1.Refresh();
             }
-        }
-
+        }        
         private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             p.Width = Int32.Parse(toolStripComboBox1.Items[toolStripComboBox1.SelectedIndex].ToString());
@@ -195,8 +195,14 @@ namespace WindowsFormsApp2
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
-                DrawArea = new Bitmap(pictureBox1.Image);
+                for (int i = 0; i < 2; i++)
+                {
+                    DrawArea = new Bitmap(openFileDialog.FileName);
+                    pictureBox1.Image = DrawArea;
+                    pictureBox1.Invalidate();
+                    this.ClientSize = new Size(pictureBox1.Image.Width + (int)(pictureBox1.Image.Width / 9) + 7, pictureBox1.Image.Height + toolStripContainer1.TopToolStripPanel.Height + 6);
+                    //^this needs to change
+                }
             }
         }
 
@@ -205,7 +211,20 @@ namespace WindowsFormsApp2
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK && saveFileDialog.FileName != "")
             {
-                pictureBox1.Image.Save(saveFileDialog.FileName);
+                ImageFormat format;
+                switch (saveFileDialog.FilterIndex)
+                {
+                    case 1:
+                        format = ImageFormat.Bmp;
+                        break;
+                    case 2:
+                        format = ImageFormat.Jpeg;
+                        break;
+                    default:
+                        format = ImageFormat.Png;
+                        break;
+                }
+                DrawArea.Save(saveFileDialog.FileName, format);
             }
         }
 
@@ -221,11 +240,6 @@ namespace WindowsFormsApp2
                 toolStripBrushButton.Checked = false;
                 canDraw = false;
             }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void toolStripRectangleButton_Click(object sender, EventArgs e)

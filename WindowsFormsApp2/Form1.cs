@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
+using System.Threading;
 
 namespace WindowsFormsApp2
 {
@@ -24,6 +26,8 @@ namespace WindowsFormsApp2
         Rectangle _rect;
         public Form1()
         {
+           
+
             InitializeComponent();
                        
             System.Array colorsArray = Enum.GetValues(typeof(KnownColor));
@@ -53,8 +57,7 @@ namespace WindowsFormsApp2
             }
 
             toolStripComboBox1.SelectedIndex = 1;
-        }
-
+        }                
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             X = 0;
@@ -184,7 +187,41 @@ namespace WindowsFormsApp2
                 pictureBox1.Image = DrawArea;
                 pictureBox1.Refresh();
             }
-        }        
+        }
+
+        private void toolStripEnglishButton_Click(object sender, EventArgs e)
+        {
+            if (toolStripEnglishButton.Checked)
+            {
+                toolStripEnglishButton.Checked = true;
+                toolStripPolishButton.Checked = false;
+                CultureInfo.CurrentUICulture = CultureInfo.CreateSpecificCulture("en");
+                ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
+                foreach (ToolStripItem item in toolStrip1.Items)
+                {
+                    resources.ApplyResources(item, item.Name);
+                }
+                resources.ApplyResources(groupBox1, groupBox1.Name);
+            }
+
+        }
+
+        private void toolStripPolishButton_Click(object sender, EventArgs e)
+        {
+            if (toolStripPolishButton.Checked)
+            {
+                toolStripPolishButton.Checked = true;
+                toolStripEnglishButton.Checked = false;
+                CultureInfo.CurrentUICulture = CultureInfo.CreateSpecificCulture("pl");
+                ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
+                foreach (ToolStripItem item in toolStrip1.Items)
+                {
+                    resources.ApplyResources(item, item.Name);
+                }
+                resources.ApplyResources(groupBox1, groupBox1.Name);
+            }
+        }
+
         private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             p.Width = Int32.Parse(toolStripComboBox1.Items[toolStripComboBox1.SelectedIndex].ToString());

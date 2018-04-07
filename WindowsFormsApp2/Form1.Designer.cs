@@ -54,6 +54,7 @@
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripEnglishButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripPolishButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripColorButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -80,13 +81,13 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.tableLayoutPanel1);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(624, 417);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(739, 444);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.LeftToolStripPanelVisible = false;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.RightToolStripPanelVisible = false;
-            this.toolStripContainer1.Size = new System.Drawing.Size(624, 442);
+            this.toolStripContainer1.Size = new System.Drawing.Size(739, 469);
             this.toolStripContainer1.TabIndex = 0;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -107,7 +108,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(624, 417);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(739, 444);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // pictureBox1
@@ -117,7 +118,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(555, 411);
+            this.pictureBox1.Size = new System.Drawing.Size(659, 438);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -130,9 +131,9 @@
             // 
             this.groupBox1.Controls.Add(this.flowLayoutPanel1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(564, 3);
+            this.groupBox1.Location = new System.Drawing.Point(668, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(57, 411);
+            this.groupBox1.Size = new System.Drawing.Size(68, 438);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -142,7 +143,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 16);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(51, 392);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(62, 419);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // toolStrip1
@@ -164,13 +165,14 @@
             this.toolStripComboBox1,
             this.toolStripSeparator3,
             this.toolStripLabel4,
+            this.toolStripColorButton,
             this.toolStripSeparator4,
             this.toolStripLabel5,
             this.toolStripEnglishButton,
             this.toolStripPolishButton});
             this.toolStrip1.Location = new System.Drawing.Point(3, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(589, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(643, 25);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -324,12 +326,22 @@
             this.toolStripPolishButton.Text = "toolStripButton1";
             this.toolStripPolishButton.ToolTipText = "Polish";
             // 
+            // toolStripColorButton
+            // 
+            this.toolStripColorButton.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripColorButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripColorButton.ForeColor = System.Drawing.Color.Black;
+            this.toolStripColorButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripColorButton.Name = "toolStripColorButton";
+            this.toolStripColorButton.Size = new System.Drawing.Size(23, 22);
+            this.toolStripColorButton.Text = "Current color";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(624, 442);
+            this.ClientSize = new System.Drawing.Size(739, 469);
             this.Controls.Add(this.toolStripContainer1);
             this.MinimumSize = new System.Drawing.Size(640, 480);
             this.Name = "Form1";
@@ -380,6 +392,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.ToolStripButton toolStripColorButton;
     }
 }
 

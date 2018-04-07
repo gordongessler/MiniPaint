@@ -32,7 +32,8 @@ namespace WindowsFormsApp2
                 p.BackColor = Color.FromKnownColor(k);
                 p.Width = 25;
                 p.Height = 25;
-                p.Click += new System.EventHandler(pictureBox_Click);
+                p.Click += new EventHandler(pictureBox_Click);
+                p.Paint += new PaintEventHandler(pictureBox_Paint);
                 flowLayoutPanel1.Controls.Add(p);
             }
 
@@ -42,6 +43,13 @@ namespace WindowsFormsApp2
             }
             pictureBox1.Image = DrawArea;
             pictureBox1.Refresh();
+
+            Bitmap b = new Bitmap(20, 20);
+            using (Graphics g = Graphics.FromImage(b))
+            {
+                g.Clear(Color.Black);
+                toolStripColorButton.Image = b;
+            }
 
             toolStripComboBox1.SelectedIndex = 1;
         }
@@ -143,12 +151,38 @@ namespace WindowsFormsApp2
         {
             PictureBox pic = (PictureBox)((Control)sender);
             p.Color = pic.BackColor;
+            Bitmap b = new Bitmap(20,20);
+            using (Graphics g = Graphics.FromImage(b))
+            {
+                g.Clear(pic.BackColor);
+                toolStripColorButton.Image = b;
+            }
+            pic.Invalidate();
+            groupBox1.Refresh();
+        }
+
+        private void pictureBox_Paint(object sender, PaintEventArgs e)
+        {
+            PictureBox pic = (PictureBox)sender;
+            if (p.Color == pic.BackColor)
+            {
+                // ControlPaint.DrawBorder(e.Graphics, pic.ClientRectangle, Color.FromArgb(pic.BackColor.ToArgb() ^ 0xffffff), ButtonBorderStyle.Dashed);
+                var borderColor = Color.FromArgb(pic.BackColor.ToArgb() ^ 0xffffff);
+                var borderStyle = ButtonBorderStyle.Dashed;
+                var borderWidth = 2;
+                ControlPaint.DrawBorder(e.Graphics,pic.ClientRectangle,borderColor,borderWidth,borderStyle,borderColor,
+                    borderWidth,borderStyle,borderColor,borderWidth,borderStyle,borderColor,borderWidth,borderStyle);
+            }
         }
 
         private void toolStripClearButton_Click(object sender, EventArgs e)
         {
-            pictureBox1.Invalidate();
-            pictureBox1.BackColor = Color.White;
+            using (Graphics g = Graphics.FromImage(DrawArea))
+            {
+                g.Clear(Color.White);
+                pictureBox1.Image = DrawArea;
+                pictureBox1.Refresh();
+            }
         }
 
         private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)

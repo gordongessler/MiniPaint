@@ -29,16 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSaveButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLoadButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripBrushButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripRectangleButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripEllipseButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripClearButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
@@ -47,32 +52,18 @@
             this.toolStripColorButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolStripSaveButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLoadButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripBrushButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripRectangleButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripEllipseButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripClearButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripEnglishButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripPolishButton = new System.Windows.Forms.ToolStripButton();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // openFileDialog
-            // 
-            this.openFileDialog.FileName = "openFileDialog1";
-            // 
-            // saveFileDialog
-            // 
-            this.saveFileDialog.FileName = "pictureOutput";
-            resources.ApplyResources(this.saveFileDialog, "saveFileDialog");
             // 
             // toolStripContainer1
             // 
@@ -97,6 +88,18 @@
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 1, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Cross;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
             // groupBox1
             // 
@@ -141,6 +144,23 @@
             this.toolStripLabel2.Name = "toolStripLabel2";
             resources.ApplyResources(this.toolStripLabel2, "toolStripLabel2");
             // 
+            // toolStripSaveButton
+            // 
+            this.toolStripSaveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripSaveButton.Image = global::WindowsFormsApp2.Resource1.save;
+            resources.ApplyResources(this.toolStripSaveButton, "toolStripSaveButton");
+            this.toolStripSaveButton.Name = "toolStripSaveButton";
+            this.toolStripSaveButton.Click += new System.EventHandler(this.toolStripSaveButton_Click);
+            // 
+            // toolStripLoadButton
+            // 
+            this.toolStripLoadButton.AutoToolTip = false;
+            this.toolStripLoadButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripLoadButton.Image = global::WindowsFormsApp2.Resource1.load;
+            resources.ApplyResources(this.toolStripLoadButton, "toolStripLoadButton");
+            this.toolStripLoadButton.Name = "toolStripLoadButton";
+            this.toolStripLoadButton.Click += new System.EventHandler(this.toolStripLoadButton_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -150,6 +170,41 @@
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
             resources.ApplyResources(this.toolStripLabel1, "toolStripLabel1");
+            // 
+            // toolStripBrushButton
+            // 
+            this.toolStripBrushButton.CheckOnClick = true;
+            this.toolStripBrushButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripBrushButton.Image = global::WindowsFormsApp2.Resource1.brush;
+            resources.ApplyResources(this.toolStripBrushButton, "toolStripBrushButton");
+            this.toolStripBrushButton.Name = "toolStripBrushButton";
+            this.toolStripBrushButton.Click += new System.EventHandler(this.toolStripBrushButton_Click);
+            // 
+            // toolStripRectangleButton
+            // 
+            this.toolStripRectangleButton.CheckOnClick = true;
+            this.toolStripRectangleButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripRectangleButton.Image = global::WindowsFormsApp2.Resource1.rect;
+            resources.ApplyResources(this.toolStripRectangleButton, "toolStripRectangleButton");
+            this.toolStripRectangleButton.Name = "toolStripRectangleButton";
+            this.toolStripRectangleButton.Click += new System.EventHandler(this.toolStripRectangleButton_Click);
+            // 
+            // toolStripEllipseButton
+            // 
+            this.toolStripEllipseButton.CheckOnClick = true;
+            this.toolStripEllipseButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripEllipseButton.Image = global::WindowsFormsApp2.Resource1.ellipse;
+            resources.ApplyResources(this.toolStripEllipseButton, "toolStripEllipseButton");
+            this.toolStripEllipseButton.Name = "toolStripEllipseButton";
+            this.toolStripEllipseButton.Click += new System.EventHandler(this.toolStripEllipseButton_Click);
+            // 
+            // toolStripClearButton
+            // 
+            this.toolStripClearButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripClearButton.Image = global::WindowsFormsApp2.Resource1.trash;
+            resources.ApplyResources(this.toolStripClearButton, "toolStripClearButton");
+            this.toolStripClearButton.Name = "toolStripClearButton";
+            this.toolStripClearButton.Click += new System.EventHandler(this.toolStripClearButton_Click);
             // 
             // toolStripSeparator2
             // 
@@ -201,70 +256,6 @@
             this.toolStripLabel5.Name = "toolStripLabel5";
             resources.ApplyResources(this.toolStripLabel5, "toolStripLabel5");
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Cross;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
-            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
-            // 
-            // toolStripSaveButton
-            // 
-            this.toolStripSaveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripSaveButton.Image = global::WindowsFormsApp2.Resource1.save;
-            resources.ApplyResources(this.toolStripSaveButton, "toolStripSaveButton");
-            this.toolStripSaveButton.Name = "toolStripSaveButton";
-            this.toolStripSaveButton.Click += new System.EventHandler(this.toolStripSaveButton_Click);
-            // 
-            // toolStripLoadButton
-            // 
-            this.toolStripLoadButton.AutoToolTip = false;
-            this.toolStripLoadButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripLoadButton.Image = global::WindowsFormsApp2.Resource1.load;
-            resources.ApplyResources(this.toolStripLoadButton, "toolStripLoadButton");
-            this.toolStripLoadButton.Name = "toolStripLoadButton";
-            this.toolStripLoadButton.Click += new System.EventHandler(this.toolStripLoadButton_Click);
-            // 
-            // toolStripBrushButton
-            // 
-            this.toolStripBrushButton.CheckOnClick = true;
-            this.toolStripBrushButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripBrushButton.Image = global::WindowsFormsApp2.Resource1.brush;
-            resources.ApplyResources(this.toolStripBrushButton, "toolStripBrushButton");
-            this.toolStripBrushButton.Name = "toolStripBrushButton";
-            this.toolStripBrushButton.Click += new System.EventHandler(this.toolStripBrushButton_Click);
-            // 
-            // toolStripRectangleButton
-            // 
-            this.toolStripRectangleButton.CheckOnClick = true;
-            this.toolStripRectangleButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripRectangleButton.Image = global::WindowsFormsApp2.Resource1.rect;
-            resources.ApplyResources(this.toolStripRectangleButton, "toolStripRectangleButton");
-            this.toolStripRectangleButton.Name = "toolStripRectangleButton";
-            this.toolStripRectangleButton.Click += new System.EventHandler(this.toolStripRectangleButton_Click);
-            // 
-            // toolStripEllipseButton
-            // 
-            this.toolStripEllipseButton.CheckOnClick = true;
-            this.toolStripEllipseButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripEllipseButton.Image = global::WindowsFormsApp2.Resource1.ellipse;
-            resources.ApplyResources(this.toolStripEllipseButton, "toolStripEllipseButton");
-            this.toolStripEllipseButton.Name = "toolStripEllipseButton";
-            this.toolStripEllipseButton.Click += new System.EventHandler(this.toolStripEllipseButton_Click);
-            // 
-            // toolStripClearButton
-            // 
-            this.toolStripClearButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripClearButton.Image = global::WindowsFormsApp2.Resource1.trash;
-            resources.ApplyResources(this.toolStripClearButton, "toolStripClearButton");
-            this.toolStripClearButton.Name = "toolStripClearButton";
-            this.toolStripClearButton.Click += new System.EventHandler(this.toolStripClearButton_Click);
-            // 
             // toolStripEnglishButton
             // 
             this.toolStripEnglishButton.Checked = true;
@@ -285,6 +276,15 @@
             this.toolStripPolishButton.Name = "toolStripPolishButton";
             this.toolStripPolishButton.Click += new System.EventHandler(this.toolStripPolishButton_Click);
             // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
+            // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.FileName = "pictureOutput";
+            resources.ApplyResources(this.saveFileDialog, "saveFileDialog");
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
@@ -300,10 +300,10 @@
             this.toolStripContainer1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -170,7 +170,6 @@ namespace WindowsFormsApp2
             PictureBox pic = (PictureBox)sender;
             if (p.Color == pic.BackColor)
             {
-                // ControlPaint.DrawBorder(e.Graphics, pic.ClientRectangle, Color.FromArgb(pic.BackColor.ToArgb() ^ 0xffffff), ButtonBorderStyle.Dashed);
                 var borderColor = Color.FromArgb(pic.BackColor.ToArgb() ^ 0xffffff);
                 var borderStyle = ButtonBorderStyle.Dashed;
                 var borderWidth = 2;
@@ -225,7 +224,6 @@ namespace WindowsFormsApp2
         private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             p.Width = Int32.Parse(toolStripComboBox1.Items[toolStripComboBox1.SelectedIndex].ToString());
-            Debug.WriteLine(toolStripComboBox1.Items[toolStripComboBox1.SelectedIndex].ToString());
         }
 
         private void toolStripLoadButton_Click(object sender, EventArgs e)
@@ -234,11 +232,19 @@ namespace WindowsFormsApp2
             {
                 for (int i = 0; i < 2; i++)
                 {
-                    DrawArea = new Bitmap(openFileDialog.FileName);
-                    pictureBox1.Image = DrawArea;
-                    pictureBox1.Invalidate();
-                    this.ClientSize = new Size(pictureBox1.Image.Width + (int)(pictureBox1.Image.Width / 9) + 7, pictureBox1.Image.Height + toolStripContainer1.TopToolStripPanel.Height + 6);
-                    //^this needs to change
+                    using (Bitmap tmp = new Bitmap(openFileDialog.FileName))
+                    {
+                        Debug.WriteLine(tmp.Size);
+
+                        DrawArea = new Bitmap(tmp);
+                        int difW = this.ClientSize.Width - tableLayoutPanel1.Width, difH = this.ClientSize.Height - tableLayoutPanel1.Height;
+                        pictureBox1.Image = DrawArea;
+                        pictureBox1.Invalidate();
+                        Debug.WriteLine(DrawArea.Size);
+                        Debug.WriteLine(pictureBox1.Image.Size);
+                        Debug.WriteLine(pictureBox1.Size);
+                        this.ClientSize = new Size(pictureBox1.Image.Width+ (int)pictureBox1.Image.Width/9 + difW, pictureBox1.Image.Height+difH);
+                    }
                 }
             }
         }
